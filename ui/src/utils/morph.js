@@ -226,6 +226,7 @@ export default function morph (_options) {
   // will be called after Vue catches up with the changes done by _options.onToggle() function
   const calculateFinalState = () => {
     const elTo = getElement(elements.to)
+    elTo.style['zIndex'] = '10000'
     if (cancelStatus === true || isValidElement(elTo) !== true) {
       typeof elFrom.qMorphCancel === 'function' && elFrom.qMorphCancel()
 
